@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>
+    {{data.title}}
+</h1>
+<div mat-dialog-content>
+    <form [formGroup]="ColumnDataForm">
+        <div class="row">
+            <br><label style="font-size:16px">Column Name:<input class="e-input" type="text"
+                formControlName="headerText" (keyup)="onValueChange('headerText', $event)" placeholder="Enter Column Name!" /></label>
+            <br><label style="font-size:16px">Data Type:<input class="e-input" type="text"
+                formControlName="dataType" (keyup)="onValueChange('dataType', $event)" placeholder="Enter data type!" /></label>
+            <br><label style="font-size:16px">Column Width:<input class="e-input" type="text"
+                formControlName="width" (keyup)="onValueChange('width', $event)" placeholder="Enter Column Width!" /></label>
+            <br><label style="font-size:16px">Alignment:<input class="e-input" type="text"
+                formControlName="textAlign" (keyup)="onValueChange('textAlign', $event)" placeholder="Enter Alignment!" /></label>
+            <br><label style="font-size:16px">Text Wrap: <input type="checkbox"
+                formControlName="textWrap" (change)="onValueChange('textWrap', $event)" /></label>
+        </div>
+    </form>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No</button>
+    <button mat-raised-button color="primary" (click)="onConfirm()">Yes</button>
+</div>
